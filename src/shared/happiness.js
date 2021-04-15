@@ -1,0 +1,1 @@
+export const HAPPINESS = ["When you get that “extra credit” from your professor", "When you find out the real reason the lady bugs come in your bed", "When your mom gives you birthday money","When the edible hits and i feel like beyonce"];

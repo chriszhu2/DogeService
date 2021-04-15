@@ -1,0 +1,1 @@
+export const SUPRISED = ["That moment you realize it wasn’t a fart", "When your coffee slips out of your hands and bounces all the way down the stairs", "When you’re at the store and you see someone paying for movies", "When my cat tells me he lost 2 pounds", "When i found out my parents weren’t just “wrestling” in the bedroom "];

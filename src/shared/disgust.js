@@ -1,0 +1,1 @@
+export const DISGUST = ["When someone shows me a beehive", "When he first sees you without your makeup","When you get facebook recommended to be friend’s with you girl’s ex", "When you see someone leave bathroom without washing hands"];
