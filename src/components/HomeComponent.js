@@ -32,6 +32,7 @@ function Home(props) {
             <div className="row align-items-start">
                 <div className="col-12 col-md m-1" >
                     <RenderCard item={props.pic1} />
+                    
                     {/* <RenderCard pic2={props.pic2} /> */}
                 </div>
             </div>

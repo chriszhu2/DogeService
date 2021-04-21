@@ -1,1 +1,15 @@
-export const HAPPINESS = ["When you get that “extra credit” from your professor", "When you find out the real reason the lady bugs come in your bed", "When your mom gives you birthday money","When the edible hits and i feel like beyonce"];
+export const HAPPINESS = 
+[
+    {
+        image: '/assets/images/happy/golden.png'
+    }, 
+    {
+        image: '/assets/images/happy/golden2.png'
+    }, 
+    {
+        image: '/assets/images/happy/happy-dogs.png'
+    } ,
+    {
+        image: '/assets/images/happy/happy-husky.png'
+    }
+];

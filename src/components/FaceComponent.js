@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 import {Link } from 'react-router-dom';
+import Canvascompo from "./CanvasComponent"
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
  
@@ -16,17 +17,18 @@ class Face extends Component {
 
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
 
     }
 
-    componentDidMount() {
-
+    componentDidUpdate() {
+        console.log("selected file is ", this.state.selectedFile);
     }
 
     handleChange(event) {
         let url1 = URL.createObjectURL(event.target.files[0]);
         this.setState({selectedFile: url1});
+        console.log("url1 is " , url1);
         const that = this;
         let makeblob = function (dataURL) {
             // converts image to base64 then to Blob
@@ -65,7 +67,7 @@ class Face extends Component {
                     body: makeblob(contents)
                 }).then((response) => response.json()).then(success => {
                 that.setState({facesArray: success});
-                console.log(that.state.facesArray);
+                console.log("facesArray is", that.state.facesArray);
                 // console.log(success);
             }).catch(error =>
                 console.log("did not work ",error))
@@ -79,41 +81,42 @@ class Face extends Component {
         //converts back to base64
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-        console.log('starting to submit profile');
+    // handleSubmit(event) {
+    //     event.preventDefault()
+    //     console.log('starting to submit profile');
         
-        const { selectedFile } = this.state 
+    //     const { selectedFile } = this.state 
 
-        console.log("posts array is ", this.state.facesArray);
-        console.log("selectedFile is ", selectedFile);
+    //     console.log("posts array is ", this.state.facesArray);
+    //     console.log("selectedFile is ", selectedFile);
   
   
   
-      const imgs = {
-          selectedFile
-        };
+    //   const imgs = {
+    //       selectedFile
+    //     };
 
-      console.log("selectedFile after is ", selectedFile);
+    //   console.log("selectedFile after is ", selectedFile);
   
-      // const userObject = {
-      //     name: this.state.name,
-      //     message: this.state.message
-      // };
+    //   // const userObject = {
+    //   //     name: this.state.name,
+    //   //     message: this.state.message
+    //   // };
   
-      axios
-        .post('http://localhost:9000/create', imgs)
-        .then(() => console.log('Photo created'))
-        .catch(err => {
-          console.error(err);
-        });
+    //   axios
+    //     .post('http://localhost:9000/create', imgs)
+    //     .then(() => console.log('Photo created'))
+    //     .catch(err => {
+    //       console.error(err);
+    //     });
        
-    }
+    // }
     
     
     render() {
 
-        const images = this.state.facesArray.map((face) => {
+        let newlist = this.state.facesArray.map((face, i) => {
+            return <Canvascompo faces={face} originalimage={this.state.selectedfile}  ivalue={i} key = {i}/>
 
         });
     
@@ -124,20 +127,13 @@ class Face extends Component {
                     <input type="file" id="fileinput" accept=".png, .jpg" onChange={this.handleChange}/>
                     <div className="form-group">
                             <button className="btn btn-primary" type="submit">Upload</button>
-                        </div>
-                    <Card className = "BookPic">
-                    <CardImg width = "100%" src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/>
-                    <CardImgOverlay>
-                    </CardImgOverlay>
-                    </Card>  
+                    </div>
+                    <img src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/>
+                    
+                    
                 </form> 
                              
-                {/* <Card className = "BookPic">
-                <CardImg width = "100%" src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/>
-                <CardImgOverlay>
-                </CardImgOverlay>
-                </Card>   */}
-                {/* <img src = {this.state.selectedFile}/> */}
+                <div>{newlist}</div>
             </div>
         </div>
       );

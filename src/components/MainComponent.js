@@ -17,6 +17,7 @@ class Main extends Component {
     }
 
   render() {
+    // console.log("pics is", this.state.pics);
 
     const HomePage = () => {
         return (
@@ -29,6 +30,7 @@ class Main extends Component {
 
     return(
       <div>
+        
         <Header />
         <Switch>
             <Route path="/home" component={HomePage} /> 
