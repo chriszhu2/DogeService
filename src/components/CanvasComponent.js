@@ -6,6 +6,9 @@ import { HAPPINESS } from '../shared/happiness';
 class Canvascompo extends Component {
     constructor(props) {
         super(props)
+        console.log("faces in constructor is ", this.props.faces);
+        console.log("original image in constructor is ", this.props.originalimage);
+
         this.myRef = React.createRef();
         this.pref = React.createRef();
         this.secondmyRef = React.createRef();
@@ -20,7 +23,8 @@ class Canvascompo extends Component {
                 //human
                 imgstring: '',
             },
-            dogpic: null
+            dogpic: null,
+            newimage: null
 
         }
         this.updateCanvas = this.updateCanvas.bind(this);
@@ -33,6 +37,7 @@ class Canvascompo extends Component {
         //this method will be called after state has changed
         console.log("original image is ", this.props.originalimage);
         console.log("faces is ", this.props.faces);
+        console.log("newimage is ", this.state.newimage);
 
     }
 
@@ -65,6 +70,7 @@ class Canvascompo extends Component {
         if(this.props.faces.faceAttributes.emotion.fear >= .5) {
             this.pref.current.innerHTML = fear[Math.floor(Math.random()*fear.length)]
         }
+        this.setState({newimage: this.props.originalimage})
         this.updateCanvas();
         this.updateCanvas2();
     }

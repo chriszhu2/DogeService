@@ -1,5 +1,4 @@
 
-import axios from 'axios';
 import React,{Component} from 'react';
 import {Link } from 'react-router-dom';
 import Canvascompo from "./CanvasComponent"
@@ -22,13 +21,26 @@ class Face extends Component {
     }
 
     componentDidUpdate() {
-        console.log("selected file is ", this.state.selectedFile);
+        console.log("selected file in CDU is ", this.state.selectedFile);
     }
 
     handleChange(event) {
         let url1 = URL.createObjectURL(event.target.files[0]);
-        this.setState({selectedFile: url1});
-        console.log("url1 is " , url1);
+        this.setState({selectedFile: url1}, function() {
+            console.log("call back w/force update", this.state.selectedFile);
+            this.forceUpdate();
+            
+        });
+
+        this.setState({selectedFile: url1}, function() {
+            console.log("normal callback", this.state.selectedFile);
+
+            
+            <Canvascompo originalimage={this.state.selectedfile} />
+        });
+        console.log("selected File after callback is", this.state.selectedFile)
+        
+
         const that = this;
         let makeblob = function (dataURL) {
             // converts image to base64 then to Blob
@@ -66,8 +78,11 @@ class Face extends Component {
                     },
                     body: makeblob(contents)
                 }).then((response) => response.json()).then(success => {
+                    that.setState({selectedFile: url1});
+
                 that.setState({facesArray: success});
                 console.log("facesArray is", that.state.facesArray);
+                console.log("new selected state is", that.state.selectedFile);
                 // console.log(success);
             }).catch(error =>
                 console.log("did not work ",error))
@@ -115,8 +130,15 @@ class Face extends Component {
     
     render() {
 
+
+        console.log("selected file before update is" , this.state.selectedfile);
+        console.log("faces array is ", this.state.facesArray)
+
         let newlist = this.state.facesArray.map((face, i) => {
-            return <Canvascompo faces={face} originalimage={this.state.selectedfile}  ivalue={i} key = {i}/>
+            <Canvascompo originalimage={this.state.selectedfile} />
+
+            
+            return <Canvascompo faces={face} originalimage={this.state.selectedfile} ivalue={i} key = {i}/>
 
         });
     
@@ -133,7 +155,9 @@ class Face extends Component {
                     
                 </form> 
                              
-                <div>{newlist}</div>
+                <div>
+                {newlist}
+                </div>
             </div>
         </div>
       );
