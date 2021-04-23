@@ -131,14 +131,14 @@ class Face extends Component {
     render() {
 
 
-        console.log("selected file before update is" , this.state.selectedfile);
+        console.log("selected file before update is" , this.state.selectedFile);
         console.log("faces array is ", this.state.facesArray)
 
         let newlist = this.state.facesArray.map((face, i) => {
             <Canvascompo originalimage={this.state.selectedfile} />
 
             
-            return <Canvascompo faces={face} originalimage={this.state.selectedfile} ivalue={i} key = {i}/>
+            return <Canvascompo faces={face} originalimage={this.state.selectedFile} ivalue={i} key = {i}/>
 
         });
     
