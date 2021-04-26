@@ -8,8 +8,5 @@ export const HAPPINESS =
     }, 
     {
         image: '/assets/images/happy/happy-dogs.png'
-    } ,
-    {
-        image: '/assets/images/happy/happy-husky.png'
-    }
+    } 
 ];

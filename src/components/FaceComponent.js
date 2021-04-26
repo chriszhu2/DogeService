@@ -12,19 +12,28 @@ class Face extends Component {
         this.state = {
             facesArray: [],
             selectedFile: null,
-            img: null
+            img: null,
+            showdiv: true
 
         }
         this.handleChange = this.handleChange.bind(this);
+        this.stateChangeCallback = this.stateChangeCallback.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
 
     }
+
+    stateChangeCallback() {
+        return null;
+    }
+
+    
 
     componentDidUpdate() {
         console.log("selected file in CDU is ", this.state.selectedFile);
     }
 
     handleChange(event) {
+        this.setState({showdiv: false});
         let url1 = URL.createObjectURL(event.target.files[0]);
         this.setState({selectedFile: url1}, function() {
             console.log("call back w/force update", this.state.selectedFile);
@@ -144,21 +153,26 @@ class Face extends Component {
     
       return (
         <div>
+            <div>{ this.state.showdiv 
+            ? 
+       
             <div className = "center">
                 <form onSubmit={this.handleSubmit} encType='multipart/form-data'>
                     <input type="file" id="fileinput" accept=".png, .jpg" onChange={this.handleChange}/>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                             <button className="btn btn-primary" type="submit">Upload</button>
-                    </div>
-                    <img src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/>
-                    
-                    
+                    </div> */}
+                    {/* <img src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/> */}   
                 </form> 
-                             
-                <div>
-                {newlist}
-                </div>
+                
+                
             </div>
+            : null
+            }</div>
+                
+                {newlist}
+        
+            
         </div>
       );
     }
