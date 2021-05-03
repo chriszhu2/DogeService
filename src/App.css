@@ -173,12 +173,15 @@ h1 {
 
 .canvaspics {
   margin-left: 30%;
+  position: relative;
+  top:-20px;
+  right:25px;
 }
 
 .RightSideDiv{
   float:right;
   left: 550px;
-  top: 250px;
+  top: -250px;
   
 
 
@@ -241,12 +244,12 @@ align-content: space-between;
   top: 220px;
 }
 
-.content-box {
+/* .content-box {
   float:left;
 
   margin-left: -1000px;
 
-}
+} */
 
 /* card flip */
 
@@ -296,6 +299,24 @@ align-content: space-between;
   color: white;
   transform: rotateY(180deg);
 }
+
+.rcorners1 {
+  border-radius: 25px;
+  /* background-image: url("/src/images/person-background3.jpg"); */
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+}
+
+/* .rcorners3 {
+  border-radius: 25px;
+  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+} */
 
 
 

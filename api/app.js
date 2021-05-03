@@ -74,18 +74,17 @@ app.use('/board', boardRouter);
 
 app.post('/create', function(req, res) {
   console.log("does something")
-  var imgstring = req.body.selectedFile;
+  var imgstring = req.body.pic1;
+  var imgstring2 = req.body.trimmedURl2;
   console.log("image string is ", imgstring);
-  console.log("image string is " + imgstring);
-  // var imagetoBuffer = Buffer.from(imgstring, "base64");
-  // console.log("image Buffer is " + imagetoBuffer);
+  console.log("image string2 is " + imgstring2);
   
   //buffer stores raw data (raw memory)
 
-  var image = Buffer.from(imgstring, "base64");
-  var newimage = image.toString('base64');
-  console.log("image is", image);
-  console.log("new image is", newiamge);
+  // var image = Buffer.from(imgstring, "base64");
+  // var newimage = image.toString('base64');
+  // console.log("image is", image);
+  // console.log("new image is", newiamge);
 
   var doc = new Humans.HumanSchema({ img: image, imagestring: image.toString('base64')});
   const board = {

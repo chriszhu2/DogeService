@@ -34,6 +34,7 @@ class Face extends Component {
 
     handleChange(event) {
         this.setState({showdiv: false});
+        // console.log("event files are", event.target.files[0]);
         let url1 = URL.createObjectURL(event.target.files[0]);
         this.setState({selectedFile: url1}, function() {
             console.log("call back w/force update", this.state.selectedFile);
@@ -43,9 +44,6 @@ class Face extends Component {
 
         this.setState({selectedFile: url1}, function() {
             console.log("normal callback", this.state.selectedFile);
-
-            
-            <Canvascompo originalimage={this.state.selectedfile} />
         });
         console.log("selected File after callback is", this.state.selectedFile)
         
@@ -91,7 +89,7 @@ class Face extends Component {
 
                 that.setState({facesArray: success});
                 console.log("facesArray is", that.state.facesArray);
-                console.log("new selected state is", that.state.selectedFile);
+
                 // console.log(success);
             }).catch(error =>
                 console.log("did not work ",error))
@@ -140,8 +138,7 @@ class Face extends Component {
     render() {
 
 
-        console.log("selected file before update is" , this.state.selectedFile);
-        console.log("faces array is ", this.state.facesArray)
+
 
         let newlist = this.state.facesArray.map((face, i) => {
             <Canvascompo originalimage={this.state.selectedfile} />
