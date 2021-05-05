@@ -5,10 +5,12 @@ var Schema = mongoose.Schema;
 var humanSchema = new Schema(
     {
         //base64 img is converted to Binary to store in MOGNODB
-        images: {
+        
             img: Buffer,
-            imagestring: String
-        }
+            imagestring: String,
+            img2: Buffer,
+            imagestring2: String
+        
         
     }, {
     timestamp:true,

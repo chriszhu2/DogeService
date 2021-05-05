@@ -75,7 +75,7 @@ class Face extends Component {
         let reader = new FileReader();
         reader.onload = function (event) {
             let contents = reader.result;
-            console.log("contents is ", contents)
+            // console.log("contents is ", contents)
             fetch("https://westus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=false&returnFaceAttributes=emotion&recognitionModel=recognition_01&returnRecognitionModel=false&detectionModel=detection_01"
                 , {
                     method: 'post',

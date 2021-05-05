@@ -22,11 +22,11 @@ class Canvascompo extends Component {
             happy: HAPPINESS,
             leftsidestate: {
                 //dog
-                imgstring: ''
+                imgstring1: ''
             },
             rightsidestate: {
                 //human
-                imgstring: '',
+                imgstring2: ''
             },
             dogpic: null,
             newdog: null
@@ -203,71 +203,53 @@ class Canvascompo extends Component {
     handleSubmit(event) {
         event.preventDefault()
 
-        const that = this;
-
-        // fetch(this.state.dogpic) 
-        // .then(function(response) {
-        //     return response.blob()
-        // })
-        // .then(function(blob) {
-        //     console.log("bruh reached", blob);
-        //     that.setState({newdog: blob}, function() {
-        //         console.log("new dog blob is", that.state.newdog); // returns blob:http://localhost:3000/2be42315-d2b5-4729-b5b0-99c7a84de5ff
-        //     });
-        //     console.log("new dog dog blob afterwards is ", that.state.newdog);
-        //     // here the image is a blob
-        //     return that.state.newdog;
-        // })
-
-        // console.log("new dog2 is ", this.state.newdog);
-
-        // function blobToFile(theBlob, fileName){
-        //     //A Blob() is almost a File() - it's just missing the two properties below which we will add
-        //     theBlob.lastModifiedDate = new Date();
-        //     theBlob.name = fileName;
-        //     return theBlob;
-        // }
-
-        // var myBlob = new Blob();
-        // var myFile = blobToFile(this.state.newdog, "my-image.png");
-
-        // console.log("myFile is ", myFile);
-
         const canvas = this.myRef.current;
         const imgUrl = canvas.toDataURL();
-        const trimmedURl = imgUrl.split(",")[1]
+        const trimmedURl = imgUrl.split(';base64,')[1];
         // console.log("trimmed url is", trimmedURl);
         let leftsidestate = this.state.leftsidestate;
-        leftsidestate.imgstring = trimmedURl;
+        leftsidestate = trimmedURl;
         this.setState({ leftsidestate: leftsidestate
 
         });
-        console.log("left side state is ", leftsidestate)
-
-
-        
+        console.log("left side state is ", this.state.leftsidestate)  
 
         const canvas2 = this.secondmyRef.current;
         const imgUrl2 = canvas2.toDataURL();
         const trimmedURl2 = imgUrl2.split(",")[1]
         // console.log("trimmed url2 is", trimmedURl2);
         let rightsidestate = this.state.rightsidestate;
-        rightsidestate.imgstring = trimmedURl2;
+        rightsidestate = trimmedURl2;
         this.setState({ rightsidestate: rightsidestate
 
         });
-        console.log("right side state is ", rightsidestate)
+        console.log("right side state is ", this.state.rightsidestate)
   
         const imgs = {
             leftsidestate,
             rightsidestate
         };
 
+
+
   
       // const userObject = {
       //     name: this.state.name,
       //     message: this.state.message
       // };
+      const data = this.state.leftsidestate;
+
+    //   fetch( 'http://localhost:9000/create', {
+    //     method: "POST",
+    //     headers: {
+    //         'Content-type': 'application/json'
+    //     },
+    //     body: JSON.stringify(imgs)
+    //     })
+    //     .then((response) => response.json())
+    //     .then((result) => {
+    //         console.log(result)
+    //     })
   
        axios
         .post('http://localhost:9000/create', imgs)

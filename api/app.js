@@ -74,34 +74,42 @@ app.use('/board', boardRouter);
 
 app.post('/create', function(req, res) {
   console.log("does something")
-  var imgstring = req.body.pic1;
-  var imgstring2 = req.body.trimmedURl2;
-  console.log("image string is ", imgstring);
-  console.log("image string2 is " + imgstring2);
+  var imgstring = req.body.leftsidestate;
+  var imgstring2 = req.body.rightsidestate;
+  // console.log("image string is " , imgstring);
+  // console.log("image string2 is " + imgstring2);
   
   //buffer stores raw data (raw memory)
 
-  // var image = Buffer.from(imgstring, "base64");
-  // var newimage = image.toString('base64');
-  // console.log("image is", image);
-  // console.log("new image is", newiamge);
+  var image = Buffer.from(imgstring, 'base64'); //stops at this line
+  console.log("does this statement reach first");
 
-  var doc = new Humans.HumanSchema({ img: image, imagestring: image.toString('base64')});
+  var newimage = image.toString('base64'); // apparently does same thing as buffer.from above
+  console.log("does this statement reach"); 
+
+  // console.log(image);
+  // console.log(newimage);
+
+  var image2 = Buffer.from(imgstring2, "base64");
+  var newimage2 = image2.toString('base64');
+  // console.log("image2 is" + image2);
+  // console.log("new image2 is" + newimage2);
+
+  // var doc = new Humans.humanSchema({ img: image, imagestring: image.toString('base64'), img2: image2, imagestring2: image2.toString('base64')});
   const board = {
     img: image,
-    imagestring: newimage
+    imagestring: newimage,
+    img2: image2,
+    imagestring2: newimage2
   };
 
-  console.log("board is ", board);
+  console.log(board);
 
   Humans.create(board);
   console.log("Humans is", Humans);
 
-  doc.save();
-  console.log("doc is " , doc);
-  //console.log(imagetoBuffer.toString('base64'));
-  // Humans.create(board)
-  console.log("Humans is ", Humans);
+  // doc.save();
+  // console.log("doc is " , doc);
 
 });
 
