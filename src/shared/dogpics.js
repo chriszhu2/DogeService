@@ -11,6 +11,12 @@ export const PICS =
         id: 1,
         image: '/assets/images/Dog-park.png',
         featured: true,          
-        }
+        },
+        {
+            id: 2,
+            image: '/assets/images/golden1.png',
+            featured: true,
+            description:'Welcome to Doge Board. '                    
+        },
     ]
     
