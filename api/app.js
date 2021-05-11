@@ -113,6 +113,17 @@ app.post('/create', function(req, res) {
 
 });
 
+app.get('/dogeboard', function(req, res) {
+  Humans.find({}).exec(function(err, docs) {
+    if(err) {
+        console.log(err);
+        return res.status(500).send(err);
+    } else {
+        return res.status(200).send(docs);
+    }
+  })
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

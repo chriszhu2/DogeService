@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Header from './HeaderComponent';
 import Face from './FaceComponent';
+import Board from './BoardComponent';
 
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { PICS } from '../shared/dogpics';
@@ -30,11 +31,13 @@ class Main extends Component {
 
     return(
       <div>
+        {/* component={() => <Clothes clothes={this.state.clothes} />}/>  */}
         
         <Header />
         <Switch>
             <Route path="/home" component={HomePage} /> 
             <Route exact path="/faceapi" component={Face}/>
+            <Route exact path="/dogeboard" component={() => <Board pic1 = {this.state.pics.filter((pic) => pic.featured)[0]}/>}/>
             <Redirect to = "/home" /> 
         </Switch>
       </div>

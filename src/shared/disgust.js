@@ -1,1 +1,12 @@
-export const DISGUST = ["When someone shows me a beehive", "When he first sees you without your makeup","When you get facebook recommended to be friend’s with you girl’s ex", "When you see someone leave bathroom without washing hands"];
+export const DISGUST = 
+[
+    {
+        image: '/assets/images/disgust/disgust1.png'
+    }, 
+    {
+        image: '/assets/images/disgust/disgust2.png'
+    }, 
+    {
+        image: '/assets/images/disgust/disgust3.png'
+    } 
+];

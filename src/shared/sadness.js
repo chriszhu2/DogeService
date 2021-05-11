@@ -1,1 +1,22 @@
-export const SADNESS = ["When you put too much salt on", "When your kids grow up to be ugly", "When your daughter hates you cause your gay"];
+export const SADNESS = 
+[
+    {
+        image: '/assets/images/sad/comfort.png'
+    }, 
+    {
+        image: '/assets/images/sad/comfort2.png'
+    }, 
+    {
+        image: '/assets/images/sad/comfort3.png'
+    },
+    {
+        image: '/assets/images/sad/comfort4.png'
+    }, 
+    {
+        image: '/assets/images/sad/sad.png'
+    }, 
+    {
+        image: '/assets/images/sad/sad2.png'
+    }
+
+];

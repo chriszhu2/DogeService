@@ -93,14 +93,24 @@
   margin-top: 175px;
 }
 
+.home2 {
+  position: fixed;
+
+  background-image: url("/src/images/background3.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+
+}
+
 .center {
   margin-left: 860px;
   display: block;
 }
 
-.nav-link {
+/* .nav-link {
   right: 100px;
-}
+} */
 
 ul {
   list-style: none;
@@ -114,29 +124,11 @@ a {
 .nav {
   display: flex;
   justify-content: flex-end;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background: var(--main-red);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  /* background: var(--main-red); */
+
 }
 
-.nav-list {
-  display: flex;
-  margin-right: 2rem;
-}
-
-@media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-list {
-    margin: 0 1rem;
-  }
-}
 
 .nav-list a {
   display: block;
@@ -256,8 +248,8 @@ align-content: space-between;
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 290px;
+  height: 290px;
   /* border: 1px solid #f1f1f1; */
   margin-left: -500px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -308,6 +300,11 @@ align-content: space-between;
   height: 300px;
 }
 
+.submit {
+  position: relative;
+  top: 50px;
+}
+
 /* .rcorners3 {
   border-radius: 25px;
   background: url(paper.gif);
@@ -318,6 +315,47 @@ align-content: space-between;
   height: 150px;
 } */
 
+/* board component */
+.board-background {
+  background-size: cover;
+  background-image: url("/src/images/background2.jpg");
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
 
+}
+
+.boardpic{
+  position: relative;
+  top: 150px;
+}
+.board {
+  position: relative;
+  right:-500px;
+  display: flex;
+  align-items: center;  
+
+}
+
+.board2 {
+  display: flex;
+  position: relative;
+  justify-content: center;  
+  top: 200px;
+}
+
+.dog {
+  /* display:flex;
+  justify-content: center; */
+  position: relative;
+  right: 400px;
+  padding: 0 100px;
+}
+
+.human {
+  position: relative;
+  /* top: 350px; */
+  right: -250px;
+}
 
 

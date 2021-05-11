@@ -51,12 +51,10 @@ class Header extends Component {
 
     render() {
         return(
-            <React.Fragment>
-                <Navbar dark expand="md">
-                    <div className="container">
-                        
+            
+                <Navbar className = "navbar-dark">
                     <nav id="navbar" class="nav">
-                        <ul class="nav-list">
+                        <ul className="nav-list">
                             <Nav navbar>
                                 <NavItem>
                                     <NavLink className="nav-link" to='/home'> Home</NavLink>
@@ -65,12 +63,16 @@ class Header extends Component {
                                 <NavItem>
                                     <NavLink className="nav-link" to='/faceapi'> How are you feeling?</NavLink>
                                 </NavItem>
+
+                                <NavItem>
+                                    <NavLink className="nav-link" to='/dogeboard'> Doge Board</NavLink>
+                                </NavItem>
                             </Nav>
                         </ul>
                     </nav>
-                    </div>
+                    
                 </Navbar>
-            </React.Fragment>
+            
         );
     }
 }

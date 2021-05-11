@@ -30,6 +30,8 @@ class Face extends Component {
 
     componentDidUpdate() {
         console.log("selected file in CDU is ", this.state.selectedFile);
+        console.log("facesArray is ", this.state.facesArray);
+
     }
 
     handleChange(event) {
@@ -87,6 +89,8 @@ class Face extends Component {
                 }).then((response) => response.json()).then(success => {
                     that.setState({selectedFile: url1});
 
+
+                console.log("facesArray is going to be")
                 that.setState({facesArray: success});
                 console.log("facesArray is", that.state.facesArray);
 
@@ -137,19 +141,19 @@ class Face extends Component {
     
     render() {
 
+        console.log("facesArray in render is", this.state.facesArray);
+
 
 
 
         let newlist = this.state.facesArray.map((face, i) => {
-            <Canvascompo originalimage={this.state.selectedfile} />
-
             
             return <Canvascompo faces={face} originalimage={this.state.selectedFile} ivalue={i} key = {i}/>
 
         });
     
       return (
-        <div>
+        <div className = "home2">
             <div>{ this.state.showdiv 
             ? 
        
@@ -165,9 +169,10 @@ class Face extends Component {
                 
             </div>
             : null
-            }</div>
+            }
+            </div>
                 
-                {newlist}
+            {newlist}
         
             
         </div>

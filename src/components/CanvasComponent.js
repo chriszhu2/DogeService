@@ -3,10 +3,15 @@ import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } 
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import axios from 'axios';
 import { HAPPINESS } from '../shared/happiness';
+import { ANGER } from '../shared/anger';
+import { NEUTRAL } from '../shared/neutral';
+import { SURPRISED } from '../shared/surprised';
+import { DISGUST } from '../shared/disgust';
+import { SADNESS } from '../shared/sadness';
+import { FEAR } from '../shared/fear';
+
 var imageToBlob = require( 'image-to-blob');
 var DOMURL = window.URL || window.webkitURL || window;
-
-
 
 class Canvascompo extends Component {
     constructor(props) {
@@ -20,6 +25,12 @@ class Canvascompo extends Component {
         this.state = {
             isFlipped: false,
             happy: HAPPINESS,
+            anger:ANGER,
+            neutral:NEUTRAL,
+            surprised:SURPRISED,
+            disgust: DISGUST,
+            sadness:SADNESS,
+            fear:FEAR,
             leftsidestate: {
                 //dog
                 imgstring1: ''
@@ -54,55 +65,131 @@ class Canvascompo extends Component {
     }
 
     componentDidMount() {
-        // const anger = ["When someone asks you whats wrong but nothings wrong, this is just how you’re face looks", "That face you make when you drop your plate", "When they say you’ll get candy and they give you a mint", "My face when I have the same teacher from last year", "When I can't find anything good on Netflix"];
-        // const surprised = ["When I get a better grade than expected", "When your coffee slips out of your hands and bounces all the way down the stairs", "When you’re at the store and you see someone paying for movies", "When my cat tells me he lost 2 pounds", "When i see my friend at the store"];
-        // const disgust = ["When someone shows me a beehive", "When he first sees you without your makeup","When you get facebook recommended to be friend’s with you girlfriend's ex", "When you see someone leave bathroom without washing hands"];
-        // const sadness = ["When you put too much salt on", "When your kids grow up to be ugly", "When your dog hates you"];
-        // const happiness = ["When you get a good grade on your homework", "When you win the chess game", "When your mom gives you birthday money","My face when I eat icecream"];
-        // const fear = ["When you find out that epstein didn’t kill himself", "When you haven't done your assignment but its due in 5 mins", "When you wake up late for an interview"];
-        // const neutral = ["When you let out a fart and you’re trying to have a neutral face", "That was so funny I laughed", "That moment when you make eye contact with another co-worker when walking down the hall", 'When someone sends you a funny text and you reply “lol” but really you just look like this','When friends start to make you mad but you gotta keep it together'];
-        // if(this.props.faces.faceAttributes.emotion.neutral >= .5) {
-        //     this.pref.current.innerHTML = neutral[Math.floor(Math.random()*neutral.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.anger >= .5) {
-        //     this.pref.current.innerHTML = anger[Math.floor(Math.random()*anger.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.surprise >= .5) {
-        //     this.pref.current.innerHTML = surprised[Math.floor(Math.random()*surprised.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.disgust >= .5) {
-        //     this.pref.current.innerHTML = disgust[Math.floor(Math.random()*disgust.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.sadness >= .5) {
-        //     this.pref.current.innerHTML = sadness[Math.floor(Math.random()*sadness.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.happiness >= .5) {
-        //     this.pref.current.innerHTML = happiness[Math.floor(Math.random()*happiness.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.fear >= .5) {
-        //     this.pref.current.innerHTML = fear[Math.floor(Math.random()*fear.length)]
-        // }
         this.updateCanvas();
         this.updateCanvas2();
 
     }
 
     updateCanvas() {        
-        // if(this.props.faces.faceAttributes.emotion.neutral >= .5) {
-        //     this.pref.current.innerHTML = neutral[Math.floor(Math.random()*neutral.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.anger >= .5) {
-        //     this.pref.current.innerHTML = anger[Math.floor(Math.random()*anger.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.surprise >= .5) {
-        //     this.pref.current.innerHTML = surprised[Math.floor(Math.random()*surprised.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.disgust >= .5) {
-        //     this.pref.current.innerHTML = disgust[Math.floor(Math.random()*disgust.length)]
-        // }
-        // if(this.props.faces.faceAttributes.emotion.sadness >= .5) {
-        //     this.pref.current.innerHTML = sadness[Math.floor(Math.random()*sadness.length)]
-        // }
+        if(this.props.faces.faceAttributes.emotion.neutral >= .5) {
+            const ha = this.state.neutral[Math.floor(Math.random()*this.state.neutral.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); 
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }
+        }
+
+        if(this.props.faces.faceAttributes.emotion.anger >= .5) {
+            const ha = this.state.anger[Math.floor(Math.random()*this.state.anger.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); 
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }        
+        }
+
+        if(this.props.faces.faceAttributes.emotion.surprised >= .5) {
+            const ha = this.state.surprised[Math.floor(Math.random()*this.state.surprised.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); 
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }           
+        }
+
+        if(this.props.faces.faceAttributes.emotion.disgust >= .5) {
+            const ha = this.state.disgust[Math.floor(Math.random()*this.state.disgust.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); 
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }           
+        }
+
+        if(this.props.faces.faceAttributes.emotion.sadness >= .5) {
+            const ha = this.state.sadness[Math.floor(Math.random()*this.state.sadness.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); 
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }           
+        }
         if(this.props.faces.faceAttributes.emotion.happiness >= .5) {
             // console.log("mood is ", this.pref.current);  
             // console.log("happy dogs is", this.state.happy);
@@ -125,7 +212,32 @@ class Canvascompo extends Component {
             canvas.canvas.height = 300;
             console.log("ha is", ha.image); 
             imageObj1.onload = function() {
-                canvas.drawImage(imageObj1, 0, 0, 300, 300);
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
+            }
+        }
+        if(this.props.faces.faceAttributes.emotion.fear >= .5) {
+            // console.log("mood is ", this.pref.current);  
+            // console.log("happy dogs is", this.state.happy);
+            const ha = this.state.fear[Math.floor(Math.random()*this.state.fear.length)]
+            this.setState({dogpic: ha.image}, function() {
+                console.log("dogpic set state is", this.state.dogpic); // returns blob:http://localhost:3000/2be42315-d2b5-4729-b5b0-99c7a84de5ff
+            });
+            console.log("dog pic set state afterwards is", this.state.dogpic);
+            var canvas = this.myRef.current.getContext('2d');
+            console.log("doge canvas is ", canvas);
+
+            // var context = canvas.getContext('2d');
+            // console.log("doge context is ", context);
+
+            let imageObj1 = new Image();
+            imageObj1.src = ha.image;
+            console.log("img obj doge is ", imageObj1.src )
+            const that = this;
+            // canvas.canvas.width = window.innerWidth;
+            canvas.canvas.height = 300;
+            console.log("ha is", ha.image); 
+            imageObj1.onload = function() {
+                canvas.drawImage(imageObj1, 0, 0, 290, 290);
             }
         }
     }
@@ -268,18 +380,6 @@ class Canvascompo extends Component {
 
         return (
             <div>
-                <div >
-                    {/* <p ref={this.pref} className="leftsidep">No Caption here</p> */}
-                    
-                    {/* <form className="tagform" onSubmit={this.leftsidehandlesubmit}>
-                        <br></br>
-                        <br></br>
-                        <input type="submit" name="leftsidetags" className="leftsidesubmit" value="Post to MemeBoard"></input>
-                    </form> */}
-
-                    
-                </div>
-                
 
                 <div className = "background2">
                 
@@ -306,8 +406,8 @@ class Canvascompo extends Component {
                                     <input type="text" name="leftsidetagbox" onChange={this.leftsidehandlechange}></input>
                                     <br></br>
                                     <br></br> */}
-                                    <div>
-                                        <input type="submit" className="submitButton" name="postbutton" value="Post to MemeBoard"></input>
+                                    <div className = "submit">
+                                        <input type="submit" className="submit" name="postbutton" value="Post to MemeBoard"></input>
                                     </div>
                                 </form>
                             </div>
@@ -323,7 +423,7 @@ class Canvascompo extends Component {
                             
                             
 
-                            <div className="RightSideDiv">
+                            <div >
                                 <div className = "rcorners1">
                                 <canvas className="canvaspics" id="canvas2" ref={this.secondmyRef} ></canvas>
                                 </div>

@@ -1,1 +1,12 @@
-export const NEUTRAL = ["When you let out a wet fart and you’re trying to have a neutral face", "That was so funny I laughed", "That moment when you make eye contact with another co-worker when walking down the hall", 'When someone sends you a funny text and you reply “lol” but really you just look like this','When customers start to piss you off but you gotta keep it together'];
+export const NEUTRAL = 
+[
+    {
+        image: '/assets/images/neutral/neutral1.png'
+    }, 
+    {
+        image: '/assets/images/neutral/neutral2.png'
+    }, 
+    {
+        image: '/assets/images/neutral/neutral3.png'
+    }
+];

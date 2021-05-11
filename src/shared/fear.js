@@ -1,1 +1,11 @@
-export const FEAR = ["When you find out that epstein didn’t kill himself", "When you see your dad on pornhub", "When you talk to your daughter and she says she has bugs down there"];
+export const FEAR = 
+[
+    {
+        image: '/assets/images/fear/protect1.png'
+    }, 
+    {
+        image: '/assets/images/fear/protect2.png'
+    }
+];
+
+
