@@ -3,6 +3,8 @@ import React,{Component} from 'react';
 import {Link } from 'react-router-dom';
 import Canvascompo from "./CanvasComponent"
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { PICS } from '../shared/dogpics';
+
 
  
 class Face extends Component {
@@ -13,7 +15,10 @@ class Face extends Component {
             facesArray: [],
             selectedFile: null,
             img: null,
-            showdiv: true
+            showdiv: true,
+            pics: PICS,
+            dogpic:null,
+            dogpicdes:null
 
         }
         this.handleChange = this.handleChange.bind(this);
@@ -32,6 +37,17 @@ class Face extends Component {
         console.log("selected file in CDU is ", this.state.selectedFile);
         console.log("facesArray is ", this.state.facesArray);
 
+    }
+
+    componentDidMount() {
+        this.dogePic();
+    }
+
+    dogePic() {
+        const dogpic = this.state.pics[3];
+        console.log("dog pic is", dogpic);
+        this.setState({dogpic:dogpic.image});
+        this.setState({dogpicdes:dogpic.description}); 
     }
 
     handleChange(event) {
@@ -165,6 +181,16 @@ class Face extends Component {
                     </div> */}
                     {/* <img src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/> */}   
                 </form> 
+
+                <div className = "facedog">
+                        {/* <RenderCard item={props.pic1} /> */}
+                        <img src = {this.state.dogpic}></img>
+                        <div class="circular-sb">
+                        {this.state.dogpicdes}
+                        <div class="circle1"></div>
+                        <div class="circle2"></div>
+                        </div>
+                    </div>
                 
                 
             </div>

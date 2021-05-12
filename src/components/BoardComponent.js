@@ -32,7 +32,7 @@ class Board extends Component {
     }
 
     dogePic() {
-        const dogpic = this.state.pics[0];
+        const dogpic = this.state.pics[2];
         console.log("dog pic is", dogpic);
         this.setState({dogpic:dogpic.image});
         this.setState({dogpicdes:dogpic.description}); 
@@ -67,12 +67,14 @@ class Board extends Component {
                     <div>
                     <div className = "board"> 
                         <div className = "board2">
-                            <div className = "dog">
-                            <img src = {`data:image/png;base64,${post.imagestring}`}></img> 
-                            </div>
-                            <div>
-                            <img src = {`data:image/png;base64,${post.imagestring2}`}></img>
-                            </div>
+                            
+                                <div className = "dog">
+                                    <img src = {`data:image/png;base64,${post.imagestring}`}></img> 
+                                </div>
+                                <div className = "human">
+                                    <img src = {`data:image/png;base64,${post.imagestring2}`}></img>
+                                </div>
+                            
                         </div>
                     </div>
                     </div>

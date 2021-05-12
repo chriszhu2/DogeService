@@ -407,7 +407,7 @@ class Canvascompo extends Component {
                                     <br></br>
                                     <br></br> */}
                                     <div className = "submit">
-                                        <input type="submit" className="submit" name="postbutton" value="Post to MemeBoard"></input>
+                                        <input type="submit" className="submit" name="postbutton" value="Post to Doge Board"></input>
                                     </div>
                                 </form>
                             </div>

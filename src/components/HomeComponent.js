@@ -27,15 +27,28 @@ function RenderCard({item, pic2}) {
 
 function Home(props) {
     return(
-        
-        <div className="background">
-            <div className="row align-items-start">
-                <div className="col-12 col-md m-1" >
-                    <RenderCard item={props.pic1} />
-                    
-                    {/* <RenderCard pic2={props.pic2} /> */}
+        <div>
+            <div class="background">
+                <div className="row align-items-start">
+                    <div className="col-12 col-md m-1" >
+                        <RenderCard item={props.pic1} />
+                        
+                        {/* <RenderCard pic2={props.pic2} /> */}
+                    </div>
                 </div>
             </div>
+
+            <div class = "background-bot">
+            <div className="row align-items-start">
+                    <div className="col-12 col-md m-1" >
+                        <RenderCard item={props.pic1} />
+                        
+                        {/* <RenderCard pic2={props.pic2} /> */}
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     );
 }

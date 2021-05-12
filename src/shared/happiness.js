@@ -1,9 +1,6 @@
 export const HAPPINESS = 
 [
     {
-        image: '/assets/images/happy/golden.png'
-    }, 
-    {
         image: '/assets/images/happy/golden2.png'
     }, 
     {

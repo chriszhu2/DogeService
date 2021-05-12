@@ -40,11 +40,15 @@
 /* homepage */
 .navbar-dark {
   background-color: #A0522D;
+  margin: 0px auto;
+  /* margin-top: 0px; */
+
 }
 
 .circular-sb {
   width: 250px;
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F
+  ;
   padding: 80px 0px;
   margin: 30px auto;
   border-radius: 50%;
@@ -55,11 +59,12 @@
   font-weight: 900;
   font-family: arial;
   position: relative;
-  color: #00bfb6;
+  color: #228B22;
 }
 
 .circle1 {
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F
+  ;
   position: absolute;
   width: 25px;
   padding: 20px;
@@ -69,7 +74,8 @@
 }
 
 .circle2 {
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F
+  ;
   position: absolute;
   width: 5px;
   padding: 10px 15px;
@@ -81,12 +87,24 @@
 
 
 .background {
-  position: fixed;
-  
-  width: 100%;
-  height: 100%;
+  /* position: fixed; */
+  /* width: 192vh;
+  height: 100vh; */
+  display: flex;
+  justify-content: center;
   background-size: cover;
   background-image: url("/src/images/background1.png");
+}
+
+.background-bot {
+  /* position: fixed; */
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  background-image: url("/src/images/background3.jpg");
 }
 
 .move-down {
@@ -124,8 +142,9 @@ a {
 .nav {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
+  /* width: 100%; */
   /* background: var(--main-red); */
+  margin-top: 0px;
 
 }
 
@@ -161,6 +180,12 @@ h1 {
 
   /* margin-left: -1000px; */
   
+}
+
+.facedog{
+  position: relative;
+  top: 100px;
+  right: 500px;
 }
 
 .canvaspics {
@@ -202,7 +227,8 @@ align-content: space-between;
 
 .circular-sb1 {
   width: 250px;
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F
+  ;
   padding: 80px 0px;
   margin: 30px auto;
   border-radius: 50%;
@@ -213,11 +239,11 @@ align-content: space-between;
   font-weight: 900;
   font-family: arial;
   position: relative;
-  color: #00bfb6;
+  color: #8FBC8F;
 }
 
 .circlee1 {
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F;
   position: absolute;
   width: 25px;
   padding: 20px;
@@ -227,7 +253,7 @@ align-content: space-between;
 }
 
 .circlee2 {
-  border: 5px solid #00bfb6;
+  border: 5px solid #8FBC8F;
   position: absolute;
   width: 5px;
   padding: 10px 15px;
@@ -318,7 +344,8 @@ align-content: space-between;
 /* board component */
 .board-background {
   background-size: cover;
-  background-image: url("/src/images/background2.jpg");
+  /* background-image: url("/src/images/background2.jpg"); */
+  background-color: #5F9EA0;
   width: 100%;
   height: 100%;
   overflow:hidden;
@@ -331,9 +358,12 @@ align-content: space-between;
 }
 .board {
   position: relative;
-  right:-500px;
+  right:-650px;
   display: flex;
-  align-items: center;  
+  align-items: center; 
+  padding: 40px;
+  top: -100px;
+ 
 
 }
 
@@ -341,7 +371,7 @@ align-content: space-between;
   display: flex;
   position: relative;
   justify-content: center;  
-  top: 200px;
+  
 }
 
 .dog {
@@ -350,12 +380,26 @@ align-content: space-between;
   position: relative;
   right: 400px;
   padding: 0 100px;
+  border-radius: 25px;
+  background-image: url("/src/images/person-background3.jpg");
+  padding: 40px;
+  height: 400px;
+  width: 400px;
+
+  /* background-color: #556B2F; */
+
+
 }
 
 .human {
   position: relative;
   /* top: 350px; */
-  right: -250px;
+  right: -130px;
+  border-radius: 25px;
+  background-image: url("/src/images/hu-background.jpg");
+  padding: 40px;
+  height: 400px;
+  width: 375px;
 }
 
 
