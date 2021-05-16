@@ -68,11 +68,11 @@ class Board extends Component {
                     <div className = "board"> 
                         <div className = "board2">
                             
-                                <div className = "dog">
-                                    <img src = {`data:image/png;base64,${post.imagestring}`}></img> 
+                                <div className = "dog" >
+                                <img src = {`data:image/png;base64,${post.imagestring2}`}></img>
                                 </div>
-                                <div className = "human">
-                                    <img src = {`data:image/png;base64,${post.imagestring2}`}></img>
+                                <div className = "human" >
+                                <img src = {`data:image/png;base64,${post.imagestring}`}></img> 
                                 </div>
                             
                         </div>

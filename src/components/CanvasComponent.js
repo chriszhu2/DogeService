@@ -17,7 +17,7 @@ class Canvascompo extends Component {
     constructor(props) {
         super(props)
         // console.log("faces in constructor is ", this.props.faces);
-        // console.log("original image in constructor is ", this.props.originalimage);
+        console.log("original image in constructor is ", this.props.originalimage);
 
         this.myRef = React.createRef();
         this.pref = React.createRef();
@@ -53,7 +53,7 @@ class Canvascompo extends Component {
 
     componentDidUpdate(props) {
         //this method will be called after state has changed
-        // console.log("original image is ", this.props.originalimage);
+        console.log("original image is ", this.props.originalimage);
         // console.log("faces is ", this.props.faces);
         // console.log("dog pic update is ", this.state.dogpic);
         console.log("second ref did update is ", this.secondmyRef.current);
@@ -257,57 +257,6 @@ class Canvascompo extends Component {
             that.props.faces.faceRectangle.width, that.props.faces.faceRectangle.height,0,0, 290, 290);
         }
     }
-
-
-    // handlesubmit() {
-    //     const canvas = this.myRef.current;
-    //     const imgUrl = canvas.toDataURL();
-    //     const trimmedURl = imgUrl.split(",")[1];
-
-    //     const canvas2 = this.secondmyRef.current;
-    //     const imgUrl2 = canvas2.toDataURL();
-    //     const trimmedURl2 = imgUrl2.split(",")[1];
-
-    //     //console.log(leftcaption);
-    //     //console.log(trimmedURl);
-
-    //     let leftsidestate = this.state.leftsidestate;
-    //     leftsidestate.imgstring = trimmedURl;
-
-    //     let rightsidestate = this.state.rightsidestate;
-    //     rightsidestate.imgstring = trimmedURl2;
-
-    //     this.setState({ leftsidestate: leftsidestate
-    //     });
-    //     const data = this.state.leftsidestate;
-    //     console.log(data);
-
-    //     this.setState({ rightsidestate: rightsidestate
-    //     });
-    //     const data2= this.state.rightsidestate;
-    //     console.log(data2);
-
-    //     const serverUrl = 'http://localhost:9000/create';
-    //     fetch( 'http://localhost:9000/create', {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    //         .then((response) => response.json())
-    //         .then((result) => {
-    //             console.log(result)
-    //         })
-    //      /* request.post(proxyurl + serverUrl).send(data).set('Accept', 'application/json').end((err, res) => {
-    //         if (err || !res.ok) {
-    //             console.log('Oh no! error');
-    //         } else {
-    //             console.log('Success');
-    //         }
-    //     }); */
-    // }
-
  
 
 
@@ -377,50 +326,32 @@ class Canvascompo extends Component {
     render() {
         console.log("my ref current is", this.myRef.current)
         console.log("second my ref current is", this.secondmyRef.current)
+        console.log("original image in render is", this.props.originalimage)
 
         return (
             <div>
-
                 <div className = "background2">
-                
-
-
                     <div className = "parent">
 
                             <div className = "context-box" >
-                                <div class="flip-card">
-                                    <div class="flip-card-inner">
-                                        <div class="flip-card-front">
-                                        {/* <img src={this.state.dogpic} alt={this.state.dogpic} className = "BookPic" id = "doge"/> */}
-                                        <canvas id="doge" ref={this.myRef} ></canvas>
-                                        </div>
-                                        <div class="flip-card-back">
-                                        <h1>John Doe</h1>
-                                        <p>Architect & Engineer</p>
-                                        <p>We love that guy</p>
-                                        </div>
-                                    </div>
+                               
+                               <div>
+                                <canvas id="doge" className = "canvaspics2" ref={this.myRef} ></canvas>
                                 </div>
-                                <form onSubmit={this.handleSubmit} encType='multipart/form-data'>
+                                       
+                                   
+                               
+                                <form onSubmit={this.handleSubmit}>
                                     {/* Add tags:
                                     <input type="text" name="leftsidetagbox" onChange={this.leftsidehandlechange}></input>
                                     <br></br>
                                     <br></br> */}
                                     <div className = "submit">
-                                        <input type="submit" className="submit" name="postbutton" value="Post to Doge Board"></input>
+                                    <input type="submit" className="submitButton" name="postbutton" value="Post to MemeBoard"></input>
                                     </div>
                                 </form>
+                                
                             </div>
-                        
-                            
-                            {/* <img src={this.state.dogpic} alt={this.state.dogpic} className = "BookPic" /> */}
-
-                            {/* <div class="circular-sb1">
-                            <p ref={this.pref} className="leftsidep">No Caption here</p>
-                            <div class="circlee1"></div>
-                            <div class="circlee2"></div>
-                            </div> */}
-                            
                             
 
                             <div >
@@ -428,17 +359,8 @@ class Canvascompo extends Component {
                                 <canvas className="canvaspics" id="canvas2" ref={this.secondmyRef} ></canvas>
                                 </div>
                             </div>
-                            <form onSubmit={this.handleSubmit} encType='multipart/form-data'>
                             
-                            {/* <div>
-                                <input type="submit" className="submitButton" name="postbutton" value="Post to MemeBoard"></input>
-                            </div> */}
-                            </form>
-                    </div>
-                    
-
-
-                    
+                    </div> 
                 </div>
                                 
             </div>

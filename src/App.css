@@ -38,11 +38,18 @@
 }
 
 /* homepage */
+
+
 .navbar-dark {
   background-color: #A0522D;
   margin: 0px auto;
   /* margin-top: 0px; */
 
+}
+
+.homefirst {
+  position: relative;
+  right: 150px;
 }
 
 .circular-sb {
@@ -59,7 +66,7 @@
   font-weight: 900;
   font-family: arial;
   position: relative;
-  color: #228B22;
+  color: #8FBC8F;
 }
 
 .circle1 {
@@ -93,7 +100,12 @@
   display: flex;
   justify-content: center;
   background-size: cover;
-  background-image: url("/src/images/background1.png");
+  /* background-image: url("/src/images/background1.png"); */
+  background-color: #CD5C5C;
+  height: 95vh;
+
+  overflow-x: hidden;
+
 }
 
 .background-bot {
@@ -103,18 +115,62 @@
   background-size: cover;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  background-color: #ADD8E6;
 
-  background-image: url("/src/images/background3.jpg");
+  /* background-image: url("/src/images/person-background3.jpg"); */
+}
+
+.dogright {
+  position: relative;
+  right: -1225px;
+}
+
+.text1 {
+  position: relative;
+  top: 500px; 
+  right: 600px; 
+}
+
+.text2 {
+  position: relative;
+  top: 500px; 
+  right: 300px; 
+}
+
+.dogsdown {
+  position: relative;
+  top: 300px;
+  right: 250px;
+}
+
+.homepic {
+  display: flex;
+  /* flex-direction: row; */
+  /* align-items: center;  */
+  padding: 300px;
+  /* justify-content: space-between; */
+}
+
+.BookPic {
+   
+  width: 300px;
+  height: 300px;
+
+
+  /* margin-left: -1000px; */
 }
 
 .move-down {
+  position: relative;
   margin-top: 175px;
 }
 
 .home2 {
   position: fixed;
 
-  background-image: url("/src/images/background3.jpg");
+  /* background-image: url("/src/images/face-background.jpg"); */
+  background-color: burlywood;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -160,27 +216,53 @@ a {
 }
 
 h1 {
-  color:blue;
+  color: #556B2F
+
 }
 
 /* canvas */
 
+.button--primary {
+  --button: hsl(346, 100%, 60%);
+  --button-hover: hsl(346, 100%, 70%);
+  --button-active:  hsl(346, 100%, 80%);
+  --button-visited: hsl(346, 100%, 70%);
+  --button-colour: var(--colour-black);
+   --button-border: var(--colour-black);
+} 
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+
+
+}
+
+.myLabel {
+  position: relative;
+  right: 425px;
+  border: 2px solid #AAA;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin: 2px;
+  background: #DDD;
+  display: inline-block;
+}
+
+
 .background2 {
-  position: fixed;
+  position: absolute;
   
   width: 100%;
   height: 100%;
   background-size: cover;
   background-image: url("/src/images/background2.jpg");
+  /* background-color: #3CB371; */
+  overflow-x: hidden;
 }
 
-.BookPic {
-  width: 300px;
-  height: 300px;
-
-  /* margin-left: -1000px; */
-  
-}
 
 .facedog{
   position: relative;
@@ -192,7 +274,14 @@ h1 {
   margin-left: 30%;
   position: relative;
   top:-20px;
-  right:25px;
+  right:750px;
+}
+
+
+.canvaspics2 {
+  position: relative;
+  top: 0px;
+  right:-250px;
 }
 
 .RightSideDiv{
@@ -262,20 +351,20 @@ align-content: space-between;
   top: 220px;
 }
 
-/* .content-box {
+.content-box {
   float:left;
 
   margin-left: -1000px;
 
-} */
+}
 
 /* card flip */
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
-  width: 290px;
-  height: 290px;
+  width: 300px;
+  height: 300px;
   /* border: 1px solid #f1f1f1; */
   margin-left: -500px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -307,7 +396,7 @@ align-content: space-between;
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #bbb;
+  /* background-color: #bbb; */
   color: black;
 }
 
@@ -381,7 +470,9 @@ align-content: space-between;
   right: 400px;
   padding: 0 100px;
   border-radius: 25px;
-  background-image: url("/src/images/person-background3.jpg");
+  border-style: solid; 
+  /* background-image: url("/src/images/person-background3.jpg"); */
+  background-color: #483D8B;
   padding: 40px;
   height: 400px;
   width: 400px;
@@ -396,7 +487,9 @@ align-content: space-between;
   /* top: 350px; */
   right: -130px;
   border-radius: 25px;
-  background-image: url("/src/images/hu-background.jpg");
+  /* background-image: url("/src/images/hu-background.jpg"); */
+  border-style: solid; 
+  background-color: #191970;
   padding: 40px;
   height: 400px;
   width: 375px;

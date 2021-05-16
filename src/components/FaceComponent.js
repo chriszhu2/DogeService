@@ -36,6 +36,7 @@ class Face extends Component {
     componentDidUpdate() {
         console.log("selected file in CDU is ", this.state.selectedFile);
         console.log("facesArray is ", this.state.facesArray);
+        console.log("original image")
 
     }
 

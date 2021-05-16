@@ -6,6 +6,8 @@ import Board from './BoardComponent';
 
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { PICS } from '../shared/dogpics';
+import { AWARDS } from '../shared/awards';
+
 
 
 class Main extends Component {
@@ -13,7 +15,8 @@ class Main extends Component {
     constructor(props) { //lifting state up
       super(props);
       this.state = { 
-        pics: PICS
+        pics: PICS,
+        awards: AWARDS
       };
     }
 
@@ -25,6 +28,10 @@ class Main extends Component {
           <Home 
             pic1= {this.state.pics.filter((pic) => pic.featured)[0]}
             pic2= {this.state.pics.filter((pic) => pic.featured)[1]}
+            dog1= {this.state.awards.filter((award) => award.featured)[0]}
+            dog2= {this.state.awards.filter((award) => award.featured)[1]}
+            dog3= {this.state.awards.filter((award) => award.featured)[2]}
+
           />  
         );
     }

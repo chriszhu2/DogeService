@@ -9,8 +9,9 @@ export const PICS =
         },
         {
             id: 1,
-            image: '/assets/images/Dog-park.png',
-            featured: true,          
+            image: '/assets/images/golden1.png',
+            featured: true,         
+            description:'Meet our dogs of the week!' 
         },
         {
             id: 2,
