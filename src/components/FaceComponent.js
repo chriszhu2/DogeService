@@ -176,11 +176,9 @@ class Face extends Component {
        
             <div className = "center">
                 <form onSubmit={this.handleSubmit} encType='multipart/form-data'>
-                    <input type="file" id="fileinput" accept=".png, .jpg" onChange={this.handleChange}/>
-                    {/* <div className="form-group">
-                            <button className="btn btn-primary" type="submit">Upload</button>
-                    </div> */}
-                    {/* <img src={this.state.selectedFile} alt={this.state.selectedFile} className = "BookPic"/> */}   
+                    <label>
+                    <input type="file" class = "myLabel" id="fileinput" accept=".png, .jpg" onChange={this.handleChange}/> 
+                    </label>
                 </form> 
 
                 <div className = "facedog">
