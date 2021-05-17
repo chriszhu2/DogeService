@@ -384,7 +384,7 @@ class Canvascompo extends Component {
 
                     <div className = "parent">
 
-                        <div class = "canvaspics">
+                        
                             <div className = "dogcanvas">
                                 <canvas id="doge" ref={this.myRef} ></canvas>
                             </div>
@@ -392,12 +392,12 @@ class Canvascompo extends Component {
                             <div className="canvashuman">
                                 <canvas id="canvas2" ref={this.secondmyRef} ></canvas>
                             </div>
-                        </div>
+                        
                             
 
                         <form onSubmit={this.handleSubmit} encType='multipart/form-data'>
                             <div className = "submit">
-                                <input type="submit" className="submit" name="postbutton" value="Post to Doge Board"></input>
+                                <input type="submit" className = "button" name="postbutton" value="Post to Doge Board"></input>
                             </div>
                         </form>
                             
