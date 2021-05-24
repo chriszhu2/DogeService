@@ -10,6 +10,7 @@ import { DISGUST } from '../shared/disgust';
 import { SADNESS } from '../shared/sadness';
 import { FEAR } from '../shared/fear';
 
+
 class Canvascompo extends Component {
     constructor(props) {
         super(props)
@@ -46,6 +47,8 @@ class Canvascompo extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
+
+    
     
 
     componentDidUpdate(props) {
@@ -62,6 +65,7 @@ class Canvascompo extends Component {
     }
 
     componentDidMount() {
+        
         this.updateCanvas();
         this.updateCanvas2();
 
@@ -377,6 +381,7 @@ class Canvascompo extends Component {
 
         return (
             <div>
+                
 
                 <div className = "background2">
                 
@@ -384,11 +389,16 @@ class Canvascompo extends Component {
 
                     <div className = "parent">
 
-                        
+                            <h1 className = "text2"> Doge Photo</h1>
+
                             <div className = "dogcanvas">
                                 <canvas id="doge" ref={this.myRef} ></canvas>
                             </div>
                         
+                            
+                            <h1 className = "textC"> Original Photo</h1>
+                            
+
                             <div className="canvashuman">
                                 <canvas id="canvas2" ref={this.secondmyRef} ></canvas>
                             </div>

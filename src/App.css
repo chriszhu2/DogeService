@@ -264,6 +264,24 @@ h1 {
   /* background-image: url("/src/images/background2.jpg"); */
 }
 
+.textC {
+  position:relative;
+  top:-100px;
+  right: 650px;
+  animation: move 3s;
+  -webkit-animation: move 3s;
+}
+
+
+
+.text2 {
+  position:relative;
+  top:-100px;
+  left: 880px;
+
+}
+
+
 
 .facedog{
   position: relative;
@@ -280,7 +298,7 @@ h1 {
   /* display:flex;
   justify-content: center; */
   position: relative;
-  right: -500px;
+  right: -600px;
   padding: 0 100px;
   border-radius: 25px;
   border-style: solid; 
@@ -296,7 +314,7 @@ h1 {
 .canvashuman {
   position: relative;
   /* top: 350px; */
-  right: 800px;
+  right: 950px;
   border-radius: 25px;
   /* background-image: url("/src/images/hu-background.jpg"); */
   border-style: solid; 
@@ -447,7 +465,7 @@ align-content: space-between;
 .submit {
   position: relative;
   top: 520px;
-  right: 580px;
+  right: 720px;
 }
 
 /* .rcorners3 {

@@ -36,7 +36,9 @@ function AwardPage({dog}){
                         </div>
                         <div class="flip-card-back">
                         <h1>{dog.name}</h1>
-                        <p> {dog.description} </p>
+                        
+                        <p> {dog.likes} </p>
+                        <p>{dog.award}</p>
                         </div>
                     </div>
                 </div>

@@ -10,6 +10,6 @@ export const ANGER =
         image: '/assets/images/angry/console1.png'
     },
     {
-        image: '/assets/images/angry/console.png'
+        image: '/assets/images/angry/console2.png'
     }
 ];

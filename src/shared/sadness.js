@@ -7,12 +7,6 @@ export const SADNESS =
         image: '/assets/images/sad/comfort2.png'
     }, 
     {
-        image: '/assets/images/sad/comfort3.png'
-    },
-    {
-        image: '/assets/images/sad/comfort4.png'
-    }, 
-    {
         image: '/assets/images/sad/sad.png'
     }, 
     {

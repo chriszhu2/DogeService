@@ -5,21 +5,28 @@ export const AWARDS =
         name:'Bear',
         image: '/assets/images/awards/golden2.png',
         featured: true,
-        description:'about: My name is Bear and I love to go on walks'   
+        name: " Bear" ,
+        likes:'about: Loves to go on walks and make humans smile',
+        award: "Fun Fact: 90% success rate of cheering up humans when smiling",
+
     }, 
     {
         id: 1,
         name:'Max',
         image: '/assets/images/awards/comfort.png',
         featured: true,
-        description:'Hi fren! My name is Max and I will be your guide!'
+        name: ' Max',
+        likes:'about: Has a sense of duty to comfort humans whenever they are sad',
+        award: "Fun Fact: instantly cheers up humans when giving hug"
     },
     {
         id: 2,
         name:'Moose',
         image: '/assets/images/awards/angry1.png',
         featured: true,
-        description:'Hi fren! My name is Moose and I will be your guide!'
+        name: " Moose",
+        likes:'about: Protects good humans at all costs',
+        award: "Fun Fact: Has protected over 50 humans from criminals"
     }
 
 ];
